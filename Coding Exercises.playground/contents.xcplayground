@@ -3,5 +3,6 @@
     <pages>
         <page name='RotationalCipher'/>
         <page name='MatchingPair'/>
+        <page name='Sliding Windonw'/>
     </pages>
 </playground>
