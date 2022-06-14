@@ -20,8 +20,24 @@ import Foundation
  Return the minimum length of the substring of s. If it is not possible, return -1
 
  Example
- s = "dcbefebce"
- t = "fd"
+ s = "adobecodebanc"
+      0123456789012
+                 i
+         j
+
+ [(a, 0),
+ (b, 0),
+ (c, 0)]
+
+ count = 1
+ minLenght = 5
+ found = true
+ left = 1 // inicio da menor substring
+ right = 6 // fim da menor substring
+
+ t = "abc"
+
+
  output = 5
 
  Explanation:
@@ -35,14 +51,14 @@ extension String {
         var right = endIndex
         var found = false
         var minLenght = self.count
-        var count = substring.count
         var mapCount = Dictionary(substring.map { ($0, 1) }, uniquingKeysWith: +)
+        var count = mapCount.count
 
         var i = startIndex
         var j = startIndex
 
         while j < endIndex {
-            var characterJ = self[j]
+            let characterJ = self[j]
             j = index(after: j)
             if var characterCount = mapCount[characterJ] {
                 characterCount -= 1
@@ -55,7 +71,7 @@ extension String {
             if count > 0 { continue }
 
             while count == 0 {
-                var characterI = self[i]
+                let characterI = self[i]
                 i = self.index(after: i)
 
                 if var characterCount = mapCount[characterI] {
@@ -116,5 +132,10 @@ let s3 = "adobecodebanc"
 let t3 = "abc"
 let output3 = s3.minLengthOfRearrangedSubstring(containing: t3)
 check(4, matches: output3)
+
+let s4 = "dcbefebcegdf"
+let t4 = "fdgf"
+let output4 = s4.minLengthOfRearrangedSubstring(containing: t4)
+check(8, matches: output4)
 
 //: [Next](@next)
