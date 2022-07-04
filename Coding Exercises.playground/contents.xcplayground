@@ -4,5 +4,6 @@
         <page name='RotationalCipher'/>
         <page name='MatchingPair'/>
         <page name='Sliding Windonw'/>
+        <page name='Search-Revenue'/>
     </pages>
 </playground>
