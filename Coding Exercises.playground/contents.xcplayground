@@ -5,5 +5,6 @@
         <page name='MatchingPair'/>
         <page name='Sliding Windonw'/>
         <page name='Search-Revenue'/>
+        <page name='Search-Billion'/>
     </pages>
 </playground>
